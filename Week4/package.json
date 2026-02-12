@@ -1,0 +1,21 @@
+{
+  "name": "expresstest",
+  "version": "1.0.0",
+  "description": "our first express server",
+  "keywords": [
+    "testing",
+    "in",
+    "class"
+  ],
+  "license": "MIT",
+  "author": "Justin Jacobson",
+  "type": "commonjs",
+  "main": "app.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "dependencies": {
+    "express": "^5.2.1",
+    "express-generator": "^4.16.1"
+  }
+}
