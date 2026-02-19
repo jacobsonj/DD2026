@@ -20,6 +20,7 @@ app.use(express.static( path.join(__dirname, 'static'))); //this line tells expr
 
 //data
 const directory = require('./data/directory.json');
+const { dir } = require('console');
 
 console.log(directory);
 
@@ -45,9 +46,35 @@ app.get('/about', (req, res) => {
     res.render('about', {title: "My Webstite's about page"});
 });
 
-
+//res.render uses a template engine to render a template and send it as a response to the client. The first argument is the name of the template (without the file extension) and the second argument is an object that contains the data to be passed to the template.
 app.get('/directory/:id', (req, res) => {
-    res.send("this is a get response from api/items")
+    const id = req.params.id;
+
+    let person = directory.find(p => p.id === parseInt(id));
+
+    res.render(
+        "person", {person: person, title: person.first_name + " " + person.last_name}
+    )
+});
+
+
+app.get("/person/add", (req, res) => {
+    console.log("request params", req.params);
+    console.log("request query", req.query);
+
+    directory.push({
+        id: req.query.id,
+        first_name: req.query.first_name,
+        last_name: req.query.last_name,
+        email: req.query.email,
+        address_line_1: req.query.address_line_1,
+        city: req.query.city,
+        state: req.query.state,
+        zip: req.query.zip
+    });
+    console.log(directory);
+
+    res.send("this is the add person page");
 });
 
 
