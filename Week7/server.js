@@ -50,7 +50,7 @@ app.use(express.urlencoded({ extended: true }));
 
 //generate routese
 app.get('/', (req, res) => {
-   //Homepage Route
+   res.render('home', { "title": "Welcome to our Travel Site" });
 });
 
 //generate routes to populate destinations page
@@ -72,6 +72,14 @@ app.post('/destinations', async (req, res) => {
     await newDestination.save();
     // res.redirect('/destinations');
     res.send('Destination added successfully');
+});
+
+app.get('/destinations', async (req, res) => {
+    //Destinations Route.
+    //code to query the database and get all destinations
+    //.lean() formats mongodb data into a format that can be easily rendered in a template engine like handlebars
+    const destinations = await Destination.find().lean();
+    res.render('destinations', { "destinations": destinations, "title": "Destinations" });
 });
 
 
