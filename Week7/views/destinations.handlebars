@@ -1,15 +1,15 @@
-<H1>{{title}}</H1>
+<H1 class="font-64 funnel-display-bold">{{title}}</H1>
 
 {{#each destinations}}
 <div class="row">
     <div class="col col-md-3">
-        <h2>{{this.name}}</h2>
+        <h2 class="font-32">{{this.name}}</h2>
         <img src="{{this.image}}" class="img-fluid square" alt="{{this.name}} image">
     </div>
-    <div class="col col-md-7">
+    <div class="col col-md-7 font-24 mt-5">
         {{this.description}}
     </div>
-    <div class="col col-md-2">
+    <div class="col col-md-2 flex-column d-flex justify-content-center">
         <a class="btn btn-primary" href="/destinations/{{this._id}}">View Details</a>
     </div>
 </div>
