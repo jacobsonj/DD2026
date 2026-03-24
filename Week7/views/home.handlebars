@@ -1,1 +1,40 @@
 <h1>{{title}}</h1>
+<p>{{homepage.description}}</p>
+{{!-- Slide show of images from the home gallery: --}}
+
+<div id="carouselHome" class="carousel slide">
+    <div class="carousel-inner">
+        {{#each galleryImages}}
+        <div class="carousel-item {{#if @first}}active{{/if}}">
+            <img src="{{url}}"  alt="{{caption}}">
+
+        </div>
+        {{/each}}
+    </div>
+    <button class="carousel-control-prev" type="button" data-bs-target="#carouselHome" data-bs-slide="prev">
+        <span class="carousel-control-prev-icon" aria-hidden="true"></span>
+        <span class="visually-hidden">Previous</span>
+    </button>
+    <button class="carousel-control-next" type="button" data-bs-target="#carouselHome" data-bs-slide="next">
+        <span class="carousel-control-next-icon" aria-hidden="true"></span>
+        <span class="visually-hidden">Next</span>
+    </button>
+</div>
+
+{{!-- destinations --}}
+<h2 class="font-32 funnel-display-bold mt-5">Featured Destinations</h2>
+{{#each destinations}}
+<div class="row">
+    <div class="col col-md-3">
+        <h2 class="font-24">{{this.name}}</h2>
+        <img src="{{this.image}}" class="img-fluid square" alt="{{this.name}} image">
+    </div>
+    <div class="col col-md-7 font-16 mt-5">
+        {{this.description}}
+    </div>
+    <div class="col col-md-2 flex-column d-flex justify-content-center">
+        <a class="btn btn-primary" href="/destinations/{{this._id}}">View Details</a>
+    </div>
+</div>
+<br>
+{{/each}}   

@@ -43,9 +43,9 @@ const imageSchema = new mongoose.Schema({
 
 gallerySchema.virtual('images', {
     ref: 'images',
-    localField: 'gallery',
-    foreignField: '_id',
-    justOne: true
+    localField: '_id',
+    foreignField: 'gallery',
+    // justOne: true
 });
 
 const destinationSchema = new mongoose.Schema({
@@ -104,14 +104,18 @@ app.use(express.static(path.join(__dirname, 'static'))); //this line tells expre
 app.use(express.urlencoded({ extended: true }));
 
 //generate routese
-app.get('/', (req, res) => {
-    const homepage = Page.findOne({ slug: 'home' }).lean();
-   const gallery = Gallery.findOne({ name: 'home' }).populate('images').lean();
-   res.render('home', {
-       "title": "Home",
-       "homepage": homepage,
-       "galleryImages": gallery.images
-   });
+app.get('/', async (req, res) => {
+    const homepage = await Page.findOne({ slug: 'home' }).lean();
+    const gallery = await Gallery.findOne({ name: 'home' }).populate('images').lean();
+    const destinations = await Destination.find().lean();
+    console.log(homepage);
+    console.log(gallery);
+    res.render('home', {
+        "title": homepage.name,
+        "homepage": homepage,
+        "galleryImages": gallery.images,
+        "destinations": destinations
+    });
 });
 
 //generate routes to populate destinations page
