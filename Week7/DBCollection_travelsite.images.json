@@ -1,0 +1,44 @@
+[{
+  "_id": {
+    "$oid": "69c2b2df3a682fa5d7f3f782"
+  },
+  "url": "/images/homegallery3.jpg",
+  "caption": "description of what this image is about",
+  "gallery": {
+    "$oid": "69bc1dbe0cd1ee82f939249a"
+  },
+  "__v": 0
+},
+{
+  "_id": {
+    "$oid": "69c2b30e3a682fa5d7f3f784"
+  },
+  "url": "/images/homegallery2.jpg",
+  "caption": "description of what this image is about",
+  "gallery": {
+    "$oid": "69bc1dbe0cd1ee82f939249a"
+  },
+  "__v": 0
+},
+{
+  "_id": {
+    "$oid": "69c2b3153a682fa5d7f3f786"
+  },
+  "url": "/images/homegallery1.jpg",
+  "caption": "description of what this image is about",
+  "gallery": {
+    "$oid": "69bc1dbe0cd1ee82f939249a"
+  },
+  "__v": 0
+},
+{
+  "_id": {
+    "$oid": "69c54bcd6f6720fdea3e03d9"
+  },
+  "url": "/images/homegallery4.jpg",
+  "caption": "description of what this image is about",
+  "gallery": {
+    "$oid": "69bc1dbe0cd1ee82f939249a"
+  },
+  "__v": 0
+}]

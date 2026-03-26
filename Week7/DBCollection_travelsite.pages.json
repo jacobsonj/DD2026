@@ -1,0 +1,18 @@
+[{
+  "_id": {
+    "$oid": "69bc1d2d0cd1ee82f9392496"
+  },
+  "slug": "home",
+  "name": "Home",
+  "description": "This is an awesome travel site.",
+  "__v": 0
+},
+{
+  "_id": {
+    "$oid": "69bc1d530cd1ee82f9392498"
+  },
+  "slug": "about-us",
+  "name": "About Us",
+  "description": "About our awesome travel site.",
+  "__v": 0
+}]

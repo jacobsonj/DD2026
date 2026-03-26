@@ -40,3 +40,47 @@
   font-weight: 700;
   font-style: normal;
 }
+
+.navbar-brand-img {
+  height: 220px;
+  max-height: 240px;
+  margin-top: -40px;
+  transition: transform 0.2s ease;
+  position: relative;
+  top: 0;
+}
+
+.navbar-brand-img:hover {
+  transform: scale(1.02);
+}
+
+.navbar {
+  align-items: flex-start;
+  padding-top: 0.25rem;
+  padding-bottom: 0.25rem;
+}
+
+.collapse.navbar-collapse {
+  margin-top: 22px;
+}
+
+.container-fluid.position-relative {
+  align-items: flex-start;
+  min-height: 1px;
+}
+
+.navbar-nav {
+  align-items: flex-start;
+}
+
+.navbar-nav .nav-item {
+  margin-top: 4px;
+}
+
+@media (max-width: 767px) {
+  .navbar-brand-img {
+    height: 140px;
+    max-height: 160px;
+    margin-top: -24px;
+  }
+}

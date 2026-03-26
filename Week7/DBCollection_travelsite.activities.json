@@ -1,0 +1,117 @@
+[{
+  "_id": {
+    "$oid": "69a9b604f5dbb273d4186e7f"
+  },
+  "name": "Chuckwalla Wall",
+  "description": "Steep limestone with pockets, edges, and technical face climbing",
+  "image": "/images/chuckwalla.jpg",
+  "destination": {
+    "$oid": "69a07f24410bf63b6a2417ba"
+  },
+  "__v": 0,
+  "cost": "18.99"
+},
+{
+  "_id": {
+    "$oid": "69a9b807b26a612c9355efa0"
+  },
+  "name": "Snow Canyon: The Caves",
+  "description": "The Caves area is known for long, technical face climbs and crack systems",
+  "image": "/images/caves.jpg",
+  "cost": 29.99,
+  "destination": {
+    "$oid": "69a07f24410bf63b6a2417ba"
+  },
+  "__v": 0
+},
+{
+  "_id": {
+    "$oid": "69a9b900d397b9c1b4a6d54c"
+  },
+  "name": "Moe's Valley",
+  "description": "Moe's Valley features clean landings, unique movement, and hundreds of problems across all grades.",
+  "image": "/images/moes.jpg",
+  "cost": 18.99,
+  "destination": {
+    "$oid": "69a07f24410bf63b6a2417ba"
+  },
+  "__v": 0
+},
+{
+  "_id": {
+    "$oid": "69c56954ae6138f88a10cd0f"
+  },
+  "name": "Road Kill Wall",
+  "description": "Road Kill Wall is known for unique and fun climbs. The cobbly conglomerate rock offers positive, three‑dimensional holds that are fun and confidence‑building, with many routes in the lower to mid grades.",
+  "image": "/images/roadkill.jpg",
+  "cost": 10.99,
+  "destination": {
+    "$oid": "69a70dc4d8cbb93d1a6d02c4"
+  },
+  "__v": 0
+},
+{
+  "_id": {
+    "$oid": "69c569bdae6138f88a10cd15"
+  },
+  "name": "Box Canyon",
+  "description": "Box Canyon is the most iconic and visually striking part of Maple Canyon. This narrow, steep‑walled corridor is packed with high‑quality, often overhanging sport climbs that attract climbers from all over the world.",
+  "image": "/images/boxcanyon.jpg",
+  "cost": 39.99,
+  "destination": {
+    "$oid": "69a70dc4d8cbb93d1a6d02c4"
+  },
+  "__v": 0
+},
+{
+  "_id": {
+    "$oid": "69c56a38ae6138f88a10cd19"
+  },
+  "name": "Pipeline",
+  "description": "The Pipeline area in the Right Fork is known for its steep, pumpy sport climbing and longer, more sustained routes. It’s a step up in difficulty compared to roadside crags like Roadkill and is often favored by climbers looking to push endurance and power.",
+  "image": "/images/pipeline.jpg",
+  "cost": 39.99,
+  "destination": {
+    "$oid": "69a70dc4d8cbb93d1a6d02c4"
+  },
+  "__v": 0
+},
+{
+  "_id": {
+    "$oid": "69c56afaae6138f88a10cd27"
+  },
+  "name": "Hard Rock",
+  "description": "Hard Rock is a compact but iconic sport climbing wall in American Fork Canyon, known for steep, powerful routes on limestone. The wall features short, overhanging climbs that emphasize strength and technique.",
+  "image": "/images/hardrock.jpg",
+  "cost": 19.99,
+  "destination": {
+    "$oid": "69a7102964613459769541c2"
+  },
+  "__v": 0
+},
+{
+  "_id": {
+    "$oid": "69c56c0aae6138f88a10cd37"
+  },
+  "name": "Hellgate",
+  "description": "Hellgate is one of the most established climbing areas in American Fork Canyon and offers a mix of sport and trad routes across several walls. The climbing here ranges from single‑pitch cragging to longer, more committing lines, and the canyon setting gives it a more alpine feel compared to roadside crags.",
+  "image": "/images/helgate.jpg",
+  "cost": 29.99,
+  "destination": {
+    "$oid": "69a7102964613459769541c2"
+  },
+  "__v": 0
+},
+{
+  "_id": {
+    "$oid": "69c56cb2ae6138f88a10cd3b"
+  },
+  "name": "Pipeline",
+  "description": "The Pipeline area is a roadside classic in American Fork Canyon and is known for long, sustained sport routes on high‑quality limestone. Many climbs here are endurance‑oriented, featuring continuous movement and well‑spaced bolts that reward efficient technique.",
+  "image": "/images/afpipeline.jpg",
+  "cost": 19.99,
+  "destination": {
+    "$oid": "69a7102964613459769541c2"
+  },
+  "__v": 0
+}]

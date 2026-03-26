@@ -1,0 +1,30 @@
+[{
+  "_id": {
+    "$oid": "69a07f24410bf63b6a2417ba"
+  },
+  "page": "stgeorge",
+  "name": "St. George",
+  "description": "Rock climbing in St. George is defined by dramatic red sandstone landscapes and year-round accessibility. With world-class areas like Snow Canyon and the surrounding desert cliffs, climbers can enjoy long, technical face climbs, crack systems, and bold sport routes set against sweeping views of lava flows and canyon walls. The mild winter climate makes St. George a premier destination when much of the country is snowed in, while the striking contrast of red rock and blue sky creates an unforgettable climbing experience that blends adventure with natural beauty.",
+  "image": "/images/stgeorgemain.jpg",
+  "__v": 0
+},
+{
+  "_id": {
+    "$oid": "69a70dc4d8cbb93d1a6d02c4"
+  },
+  "page": "maplecanyon",
+  "name": "Maple Canyon",
+  "description": "Maple Canyon offers a completely different climbing experience, known for its steep limestone routes and cool, shaded environment. Famous for hard sport climbing and tufa-style features, the canyon attracts climbers looking to push their technical limits on powerful, overhanging terrain. Summer temperatures remain comfortable thanks to the high elevation and dense tree cover, making Maple Canyon a go-to destination when lower-elevation crags are too hot. Its unique geology and quiet, forested setting give the area a focused, almost gym-like intensity in a natural outdoor setting.",
+  "image": "/images/maplecanyonmain.jpg",
+  "__v": 0
+},
+{
+  "_id": {
+    "$oid": "69a7102964613459769541c2"
+  },
+  "page": "americanfork",
+  "name": "American Fork",
+  "description": "American Fork Canyon is a classic Wasatch Front climbing area that combines convenience with exceptional route quality. Just a short drive from Utah Valley, the canyon features limestone walls packed with well-bolted sport climbs and multi-pitch routes suitable for a wide range of skill levels. Areas like Hellgate and the Pipeline offer everything from beginner-friendly lines to sustained technical challenges, all set in a scenic alpine environment. The easy access and variety make American Fork Canyon a favorite for both quick after-work sessions and full days of climbing.",
+  "image": "/images/americanforkmain.jpg",
+  "__v": 0
+}]
