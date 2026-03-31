@@ -1,52 +1,128 @@
-<!DOCTYPE html>
+<!doctype html>
 <html lang="en">
+
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>Document</title>
     <!-- Link to the react library from unpkg.com -->
     <script src="https://unpkg.com/react@18/umd/react.development.js"></script>
     <script src="https://unpkg.com/react-dom@18/umd/react-dom.development.js"></script>
-    <!-- Link to the Babel transformer from unpkg.com -->
+    <!-- Link to the Babel library from unpkg.com -->
     <script src="https://unpkg.com/@babel/standalone/babel.min.js"></script>
 </head>
+
 <body>
-    <!-- important react concepts: components, props, state -->
+    <!-- Important React concepts: Components, Props, State -->
     <div id="app"></div>
-    <script type="text/jsx">
-        const app = document.getElementById('app');
+    <script type="text/babel">
+        const app = document.getElementById("app");
 
-        // react components 
-        function Header(props) {
-            const { title } = props;
-            return <h1 className={props.class}>{title}</h1>;
+        // React Components
+        function Header({ title }) {
+            return <h1> {createTitle(title)} </h1>;
         }
-
         function createTitle(title) {
-            if (title){
+            if (title) {
                 return title;
             } else {
-                return "Default Title";
+                return "Default title";
             }
-
-            
         }
 
-        function Homepage() {
+        function Results({ results }) {
+            const [searchResults, setSearchResults] = React.useState(results);
+
             return (
                 <>
-                    <Header title={createTitle('Welcome to the Homepage')} class="header" />
-                    <Header title={createTitle()} class="subheader" />
-                    <p>Welcome to the homepage!</p>
+                    <h2>Search Results</h2>
+                    <ul>
+                        {results.map((result, index) => (
+                            <li key={index}>
+                                {result.alpha} <br />
+                                {result.context} <br />
+                                <a href={result.url} target="_blank">
+                                    {result.title}
+                                </a>
+                            </li>
+                        ))}
+                    </ul>
+                </>
+            );
+        }
+
+
+
+
+        function Homepage() {
+
+            // https:/www.cdn.miami.edu/_assets-common/php/searchblox/?
+            const [likes, setLikes] = React.useState(0);
+            const [name, setName] = React.useState('John Doe');
+
+            //search applicatin 
+            const [searchTerm, setSearchTerm] = React.useState('');
+
+
+            function handleClick() {
+                setLikes(likes + 1);
+                console.log("Button clicked!");
+                console.log("Likes: ", likes + 1);
+            }
+
+            const fruits = ["Apple", "Banana", "Cherry"];
+
+
+            function performSearch() {
+                console.log("Searching for: ", searchTerm);
+                // Here you would typically make an API call to perform the search
+                const searchUrl = `https://www.cdn.miami.edu/_assets-common/php/searchblox/?q=${encodeURIComponent(searchTerm)}`;
+                fetch(searchUrl)
+                    .then(response => response.json())
+                    .then(data => {
+                        console.log("Search results: ", data);
+                        // Handle the search results here
+                    })
+                    .catch(error => {
+                        console.error("Error performing search: ", error);
+                    });
+            }
+
+            return (
+                <>
+                    <Header title="Welcome to the homepage" />
+                    <Header />
+                    <p>This is the homepage</p>
+
+                    {fruits.map((fruit, index) => (
+                        <p key={index}>{fruit}</p>
+                    ))}
+                    <label htmlFor="name">Name</label>
+                    <input type="text" id="name" value={name} onChange={(e) => setName(e.target.value)} />
+                    <p>You entered: {name}</p>
+                    <button onClick={handleClick}>
+                        likes: ({likes})
+                    </button>
+
+
+
+                    <input
+                        type="text"
+                        id="search"
+                        name="search"
+                        placeholder="Search..."
+                        value={searchTerm}
+                        onChange={(e) => setSearchTerm(e.target.value)}
+                    />
+                    <button onClick={performSearch}>Search</button>
+
                 </>
             );
         }
 
         const root = ReactDOM.createRoot(app);
-        root.render(
-            <Homepage />
-        );
-
+        root.render(<Homepage />);
     </script>
 </body>
+
 </html>
