@@ -1,9 +1,32 @@
 "use client";
-import { useState } from "react";
-import { redirect } from "next/navigation";
+import { useState, useEffect } from "react";
+import { redirect, useSearchParams } from "next/navigation";
 // form fields: name, page, description,image  
 
-export default function NewDestinationPage() {
+interface Destination {
+    _id: string;
+    name: string;
+    description: string;
+}
+
+export default function UpdateDestinationPage() {
+    const [destination, setDestination] = useState<Destination | null>(null);
+
+    const router = useSearchParams();
+    const id = router.get("id");
+
+    useEffect(() => {
+        const fetchDestinations = async () => {
+            // replace this with your actual API call
+            const response = await fetch(`http://localhost:3001/api/destinations/${id}`);
+            const data = await response.json();
+            setDestination(data);
+            console.log(data);
+        };
+
+        fetchDestinations();
+    }, []);
+
     const [formData, setFormData] = useState({
         name: "",
         page: "",
@@ -55,7 +78,7 @@ export default function NewDestinationPage() {
                 throw new Error("Failed to add destinations");
             } else {
                 // redirect("/destinations");
-            }   
+            }
         } catch (err) {
             setError((err as Error).message);
         } finally {
@@ -69,7 +92,7 @@ export default function NewDestinationPage() {
 
     return (
         <div className="max-w-[600px] w-full">
-            <h1 className="text-3xl font-bold">Add New Destination</h1>
+            <h1 className="text-3xl font-bold">Edit Destination {router.get('id')}</h1>
             <form className="mt-4" onSubmit={handleSubmit}>
 
                 <div className="mb-4">
@@ -80,7 +103,7 @@ export default function NewDestinationPage() {
                         type="text"
                         id="name"
                         name="name"
-                        value={formData.name}
+                        value={destination.name}
                         onChange={handleChange}
                         className="border border-gray-300 rounded py-2 px-3 focus:outline-none focus:ring-2 focus:ring-blue-500"
                     />
@@ -109,7 +132,7 @@ export default function NewDestinationPage() {
                         name="description"
                         className="border border-gray-300 rounded py-2 px-3 focus:outline-none focus:ring-2 focus:ring-blue-500"
                         onChange={handleChange}
-                        value={formData.description}
+                        value={destination?.description || ''}
                     />
 
                 </div>
@@ -132,7 +155,7 @@ export default function NewDestinationPage() {
                         className="bg-green-500 hover:bg-green-700 text-white font-bold py-2 px-4 rounded"
                         disabled={loading}
                     >
-                        Add Destination
+                        Edit Destination
                     </button>
                 </div>
 

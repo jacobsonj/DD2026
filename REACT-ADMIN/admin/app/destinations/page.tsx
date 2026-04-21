@@ -38,10 +38,10 @@ export default function Destinations() {
             <tr key={destination._id}>
               <td className="border border-gray-300 p-2">{destination.name}</td>
               <td className="border border-gray-300 p-2">{destination.description}</td>
-              <td className="border border-gray-300 p-2">
-                <button className="bg-blue-500 hover:bg-blue-700 text-white font-bold py-2 px-4 rounded">
+              <td className="border border-gray-300 p-2 w-[200px]">
+                <a href={`/destinations/edit/?id=${destination._id}`} className="bg-blue-500 hover:bg-blue-700 text-white font-bold py-2 px-4 rounded">
                   Edit
-                </button>
+                </a>
                 <button className="bg-red-500 hover:bg-red-700 text-white font-bold py-2 px-4 rounded ml-2">
                   Delete
                 </button>
