@@ -1,6 +1,6 @@
 "use client";
 import { useState } from "react";
-import { redirect } from "next/navigation";
+import { useRouter } from "next/navigation";
 // form fields: name, page, description,image  
 
 export default function NewDestinationPage() {
@@ -12,6 +12,8 @@ export default function NewDestinationPage() {
     });
     const [loading, setLoading] = useState(false);
     const [error, setError] = useState<string | null>(null);
+
+    const router = useRouter();
 
     const handleChange = (e: React.ChangeEvent<HTMLInputElement | HTMLTextAreaElement>) => {
         setFormData({
@@ -54,7 +56,7 @@ export default function NewDestinationPage() {
             if (!response.ok) {
                 throw new Error("Failed to add destinations");
             } else {
-                // redirect("/destinations");
+                router.push("/destinations");
             }   
         } catch (err) {
             setError((err as Error).message);

@@ -161,6 +161,34 @@ app.post("/api/destinations", upload.single('image'), async (req, res) => {
   //res.redirect("/destinations");
   res.send("Destination added successfully");
 });
+
+
+// update destination
+app.put("/api/destinations/:id", upload.single("image"), async (req, res) => {
+  console.clear();
+  const { id } = req.params;
+  const { page, name, description } = req.body;
+  const image = req.file;
+
+  await Destination.findByIdAndUpdate(id, {
+    page,
+    name,
+    description,
+    image: image ? `/images/${image.filename}` : this.image,
+  });
+  res.send("Destination updated successfully");
+});
+
+
+app.delete("/api/destinations/:id", async (req, res) => {
+  const { id } = req.params;
+  await Destination.findByIdAndDelete(id);
+  res.send("Destination deleted successfully");
+});
+
+
+
+
 // generate routes to display destinations page
 app.get("/destinations", async (req, res) => {
   // code to fetch destinations from the database and render the destinations page
